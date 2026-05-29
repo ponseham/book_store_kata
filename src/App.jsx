@@ -1,7 +1,11 @@
+import "./styles.css";
+
 function App() {
   return (
     <>
-      <div></div>
+      <header>
+        <h1>Book Store</h1>
+      </header>
     </>
   );
 }
