@@ -1,6 +1,4 @@
-import { useState } from "react";
-export default function Basket() {
-  const [basket, setBasket] = useState([]);
+export default function Basket({ basket }) {
   const total = basket.length * 50;
 
   return (

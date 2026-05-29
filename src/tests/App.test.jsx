@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, act, within } from "@testing-library/react";
 import { describe, test, expect } from "vitest";
 import App from "../App";
 
@@ -24,5 +24,20 @@ describe("Book Store", () => {
   test("Showing total price as zero initially", () => {
     render(<App />);
     expect(screen.getByText("Total: 0")).toBeInTheDocument();
+  });
+  test("When add book to basket should show books name in basket", async () => {
+    render(<App />);
+    const buttons = screen.getAllByText("Add to Basket");
+    act(() => {
+      buttons[0].click();
+    });
+
+    act(() => {
+      buttons[1].click();
+    });
+
+    const ul = await screen.findByRole("list");
+    const items = within(ul).getAllByRole("listitem");
+    expect(items).toHaveLength(2);
   });
 });
