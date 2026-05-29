@@ -11,4 +11,10 @@ describe("Book Store", () => {
     render(<App />);
     expect(screen.getByText("Clean Code")).toBeInTheDocument();
   });
+  test("Showing the Add book to basket button for all books", () => {
+    render(<App />);
+    const buttons = screen.getAllByText("Add to Basket");
+    expect(buttons.length).toBe(5);
+    expect(buttons[0]).toBeInTheDocument();
+  });
 });
