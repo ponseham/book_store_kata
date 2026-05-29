@@ -1,5 +1,7 @@
+import { calculateTotal } from "./utils/priceCalculator";
+
 export default function Basket({ basket }) {
-  const total = basket.length * 50;
+  const totalAmount = calculateTotal(basket);
 
   return (
     <div className="basket-panel">
@@ -15,7 +17,7 @@ export default function Basket({ basket }) {
         </ul>
       )}
 
-      <h3>Total: {total}</h3>
+      <h3>Total: {totalAmount}</h3>
     </div>
   );
 }

@@ -40,4 +40,21 @@ describe("Book Store", () => {
     const items = within(ul).getAllByRole("listitem");
     expect(items).toHaveLength(2);
   });
+  test("Showing calculated total amount with discount based on selected books in basket", async () => {
+    render(<App />);
+    const buttons = screen.getAllByText("Add to Basket");
+    act(() => {
+      buttons[0].click();
+    });
+
+    act(() => {
+      buttons[1].click();
+    });
+
+    act(() => {
+      buttons[0].click();
+    });
+
+    expect(screen.getByText("Total: 145")).toBeInTheDocument();
+  });
 });
