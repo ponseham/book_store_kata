@@ -5,7 +5,7 @@ body {
   display: flex;
   justify-content: center;
 }
-container {
+.container {
   display: flex;
   gap: 20px;
 }
@@ -28,4 +28,14 @@ container {
   margin-top: 8px;
   padding: 5px 10px;
   cursor: pointer;
+}
+.basket-panel {
+  flex: 1;
+  background: white;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.empty {
+  color: gray;
 }

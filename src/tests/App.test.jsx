@@ -17,4 +17,8 @@ describe("Book Store", () => {
     expect(buttons.length).toBe(5);
     expect(buttons[0]).toBeInTheDocument();
   });
+  test("Showing the empty basket initially", () => {
+    render(<App />);
+    expect(screen.getByText("No books added yet")).toBeInTheDocument();
+  });
 });

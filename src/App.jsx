@@ -1,4 +1,5 @@
 import BookList from "./BookList";
+import Basket from "./Basket";
 import "./styles.css";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       </header>
       <div className="container">
         <BookList />
+        <Basket />
       </div>
     </>
   );
