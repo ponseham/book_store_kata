@@ -1,6 +1,8 @@
 import { useState } from "react";
 export default function Basket() {
   const [basket, setBasket] = useState([]);
+  const total = basket.length * 50;
+
   return (
     <div className="basket-panel">
       <h2>Your Basket</h2>
@@ -14,6 +16,8 @@ export default function Basket() {
           ))}
         </ul>
       )}
+
+      <h3>Total: {total}</h3>
     </div>
   );
 }

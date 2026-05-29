@@ -21,4 +21,8 @@ describe("Book Store", () => {
     render(<App />);
     expect(screen.getByText("No books added yet")).toBeInTheDocument();
   });
+  test("Showing total price as zero initially", () => {
+    render(<App />);
+    expect(screen.getByText("Total: 0")).toBeInTheDocument();
+  });
 });
