@@ -7,4 +7,8 @@ describe("Book Store", () => {
     render(<App />);
     expect(screen.getByText("Book Store")).toBeInTheDocument();
   });
+  test("Shows Book list", () => {
+    render(<App />);
+    expect(screen.getByText("Clean Code")).toBeInTheDocument();
+  });
 });
